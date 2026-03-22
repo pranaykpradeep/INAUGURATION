@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inauguration Console - Screen 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-screen="screen-2">
+    <div class="ambient-bg"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <p class="kicker">Inauguration Lab</p>
+                <h1>Dual Screen Mirror</h1>
+            </div>
+            <div class="status-indicator" id="status-indicator">
+                <span class="pulse-dot"></span>
+                <span id="status-text">Listening on Screen 2</span>
+            </div>
+        </header>
+
+        <section class="card stage-card">
+            <h2>Secondary Stage Console</h2>
+            <p>
+                This page is intended to stay hidden and open only through the direct link.
+                It auto-starts when Screen 1 triggers. If sync fails, use the manual button below.
+            </p>
+
+            <div class="action-row">
+                <button id="manual-trigger-btn" class="btn btn-primary">Manual Start (Fail-safe)</button>
+                <button id="arm-audio-btn" class="btn btn-secondary">Enable Sound</button>
+            </div>
+
+            <div class="link-panel compact">
+                <p>Fail-safe mode keeps the event running even if form/App Script sync fails.</p>
+            </div>
+        </section>
+
+        <section class="card timeline-card" id="timeline-card">
+            <h3>Event Timeline</h3>
+            <div class="timeline-step" id="step-form">1. Waiting for remote trigger</div>
+            <div class="timeline-step" id="step-ribbon">2. Ribbon cut sequence</div>
+            <div class="timeline-step" id="step-video">3. Fullscreen video launch</div>
+        </section>
+    </main>
+
+    <div class="ribbon-zone" id="ribbon-zone" aria-hidden="true">
+        <div class="ribbon ribbon-left"></div>
+        <div class="scissor" id="scissor">✂</div>
+        <div class="ribbon ribbon-right"></div>
+    </div>
+
+    <video
+        id="success-video"
+        class="success-video hidden"
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        playsinline
+        preload="auto"
+        controls
+    ></video>
+
+    <iframe id="form-submit-frame" name="form-submit-frame" class="hidden"></iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>

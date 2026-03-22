@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inauguration Console</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ambient-bg"></div>
+
+    <main class="app-shell flex-center">
+        <section class="card stage-card">
+            <h2>START INAUGURATION</h2>
+            <br>
+            <div class="action-row">
+                <!-- Identical simple button for both screens -->
+                <button id="trigger-btn" class="btn btn-primary start-button">COMMENCE</button>
+            </div>
+        </section>
+    </main>
+
+    <section id="inauguration-overlay" class="inauguration-overlay hidden" aria-live="polite">
+        <div class="overlay-card">
+            <div class="ribbon-stage" aria-hidden="true">
+                <div class="ribbon-left"></div>
+                <div class="ribbon-center-cut"></div>
+                <div class="ribbon-right"></div>
+                <div class="scissor">✂</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Video -->
+    <video
+        id="success-video"
+        class="success-video hidden"
+        src="inauguration-video.mp4"
+        playsinline
+        preload="auto"
+        controls
+    ></video>
+
+    <footer class="bottom-portal">
+        <a id="secret-link" href="?screen=2" target="_blank" rel="noopener">Open Screen 2</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
